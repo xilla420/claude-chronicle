@@ -1,0 +1,5 @@
+# laid by Claude Code when it loads a mod for editing
+.claude-plugin/types/
+**/.claude-plugin/types/
+**/tsconfig.json
+node_modules/

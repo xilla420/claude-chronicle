@@ -1,0 +1,12 @@
+{
+  "name": "xilla420",
+  "owner": { "name": "xilla420" },
+  "metadata": { "description": "Mods for Claude Code by xilla420." },
+  "plugins": [
+    {
+      "name": "chronicle",
+      "source": "./chronicle",
+      "description": "Timestamps on every message, a usage line on each reply, a live status line, limit alerts and a usage dashboard (/chronicle)."
+    }
+  ]
+}

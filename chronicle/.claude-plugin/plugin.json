@@ -1,0 +1,81 @@
+{
+  "name": "chronicle",
+  "version": "0.3.0",
+  "description": "Timestamps on every message, dates where the day changes, a usage line on each reply, live status line, limit alerts and a usage dashboard (/chronicle).",
+  "author": { "name": "xilla" },
+  "keywords": ["timestamps", "usage", "cost", "rate-limits", "dashboard"],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "timezone": {
+      "type": "string",
+      "title": "Time zone",
+      "description": "auto (this machine's zone), an IANA name like Europe/Berlin, or an offset like +02:00. Cloud sessions run on UTC, so set it there.",
+      "default": "auto"
+    },
+    "clock": {
+      "type": "string",
+      "title": "Clock format",
+      "description": "24-hour (14:05) or 12-hour (2:05 PM).",
+      "default": "24h",
+      "options": ["24h", "12h"]
+    },
+    "seconds": {
+      "type": "boolean",
+      "title": "Show seconds",
+      "description": "Include seconds in message timestamps.",
+      "default": true
+    },
+    "dateFormat": {
+      "type": "string",
+      "title": "Date format",
+      "description": "weekday: Mon 12 Oct 2026 · iso: 2026-10-12 · us: Mon, Oct 12, 2026 · eu: Mon 12.10.2026",
+      "default": "weekday",
+      "options": ["weekday", "iso", "us", "eu"]
+    },
+    "stamps": {
+      "type": "string",
+      "title": "Timestamps on",
+      "description": "Which messages get a timestamp.",
+      "default": "both",
+      "options": ["both", "prompts", "replies", "off"]
+    },
+    "showElapsed": {
+      "type": "boolean",
+      "title": "Show elapsed time",
+      "description": "Add +12s to replies (time since your prompt) and 2h later to prompts after a break.",
+      "default": true
+    },
+    "turnFooter": {
+      "type": "boolean",
+      "title": "Usage line on replies",
+      "description": "End each turn's last reply with its time, duration, cost, tokens and context.",
+      "default": true
+    },
+    "footerStyle": {
+      "type": "string",
+      "title": "Usage line detail",
+      "description": "full: time, duration, cost, tokens, cache, context, tools · compact: time, duration, cost, context.",
+      "default": "full",
+      "options": ["full", "compact"]
+    },
+    "statusLine": {
+      "type": "boolean",
+      "title": "Status line",
+      "description": "Pin a live clock, cost, context and rate-limit line under the prompt.",
+      "default": true
+    },
+    "statusStyle": {
+      "type": "string",
+      "title": "Status line detail",
+      "description": "full: with burn rate and reset times · compact: the numbers only.",
+      "default": "full",
+      "options": ["full", "compact"]
+    },
+    "alerts": {
+      "type": "boolean",
+      "title": "Limit alerts",
+      "description": "Notify at 50/80/95% of a rate limit, when you're on pace to run out before the reset, and at 75/90% context.",
+      "default": true
+    }
+  }
+}
